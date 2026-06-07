@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "pageObjects/*": ["src/pageObjects/*"],
+      "fixtures/*": ["src/fixtures/*"],
+      "types/*": ["src/services/types/*"],
+      "utils/*": ["src/utils/*"],
+      "config/*": ["src/config/*"],
+      "services/*": ["src/services/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

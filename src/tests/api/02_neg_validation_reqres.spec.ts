@@ -12,8 +12,8 @@ import logger from 'utils/logger'
 test.describe('POST /register — негативные сценарии валидации данных', () => {
     test.skip(!REQRES_API_KEY, 'Не задан REQRES_API_KEY — добавь его в .env.dev');
 
-    test('02. Запрос без обязательного поля password → 400 с ожидаемой ошибкой', async () => {
-        logger.info('02. Запрос без обязательного поля password → 400 с ожидаемой ошибкой');
+    test('02.1. Запрос без обязательного поля password → 400 с ожидаемой ошибкой', async () => {
+        logger.info('02.1. Запрос без обязательного поля password → 400 с ожидаемой ошибкой');
 
         const apiContext = await getReqresContext(REQRES_API_KEY);
         const response = await apiContext.post('register', {
@@ -28,8 +28,8 @@ test.describe('POST /register — негативные сценарии вали
         await apiContext.dispose();
     });
 
-    test('03. Запрос без обязательных полей (пустое тело) → 400 с ожидаемой ошибкой', async () => {
-        logger.info('03. Запрос без обязательных полей (пустое тело) → 400 с ожидаемой ошибкой');
+    test('02.2. Запрос без обязательных полей (пустое тело) → 400 с ожидаемой ошибкой', async () => {
+        logger.info('02.2. Запрос без обязательных полей (пустое тело) → 400 с ожидаемой ошибкой');
 
         const apiContext = await getReqresContext(REQRES_API_KEY);
         const response = await apiContext.post('register', { data: {} });
@@ -42,8 +42,8 @@ test.describe('POST /register — негативные сценарии вали
         await apiContext.dispose();
     });
 
-    test('04. Запрос с невалидными данными (незарегистрированный email) → 400 с ожидаемой ошибкой', async () => {
-        logger.info('04. Запрос с невалидными данными (незарегистрированный email) → 400 с ожидаемой ошибкой');
+    test('02.3. Запрос с невалидными данными (незарегистрированный email) → 400 с ожидаемой ошибкой', async () => {
+        logger.info('02.3. Запрос с невалидными данными (незарегистрированный email) → 400 с ожидаемой ошибкой');
 
         const apiContext = await getReqresContext(REQRES_API_KEY);
         const response = await apiContext.post('register', {
